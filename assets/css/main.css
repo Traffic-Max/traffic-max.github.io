@@ -81,6 +81,30 @@ input:hover, select:hover, textarea:hover {
     box-shadow: 0 0 4px rgba(56,189,248,0.3);
 }
 
+.glider {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px; /* если хочешь закругление */
+	overflow: hidden; /* гарантирует, что слайды не вылезают */
+  }
+  
+  .glider-prev,
+  .glider-next {
+	background: none;
+	border: none;
+	color: white;
+	font-size: 28px;
+	cursor: pointer;
+  }
+
+.slide img {
+	width: 100%;
+	height: auto;
+	object-fit: cover;
+	border-radius: 8px;
+}
+
 /* Basic */
 
 	@-ms-viewport {
