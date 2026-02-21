@@ -1367,16 +1367,24 @@ input:hover, select:hover, textarea:hover {
 			}
 
 		#header .logo {
-			width: 5.5rem;
-			height: 5.5rem;
-			line-height: 5.5rem;
-			border: solid 1px #ffffff;
-			border-radius: 100%;
+			width: 60px;           /* Размер на десктопе */
+			height: 60px;
+			border-radius: 50%;    /* Если нужно круглый фон */
+			overflow: hidden;      /* Чтобы изображение не вылезало */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: none;          /* Если рамка не нужна */
+			padding: 0;
+			line-height: normal;   /* убираем старые значения */
 		}
-
-			#header .logo .icon:before {
-				font-size: 2rem;
-			}
+		
+		/* Логотип внутри */
+		#header .logo img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;   /* масштабирование без обрезки */
+		}
 
 		#header .content {
 			border-style: solid;
@@ -1517,9 +1525,8 @@ input:hover, select:hover, textarea:hover {
 				}
 
 			#header .logo {
-				width: 4.75rem;
-				height: 4.75rem;
-				line-height: 4.75rem;
+				width: 48px;       /* уменьшаем логотип */
+				height: 48px;
 			}
 
 				#header .logo .icon:before {
