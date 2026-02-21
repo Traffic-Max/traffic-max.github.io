@@ -105,6 +105,13 @@ input:hover, select:hover, textarea:hover {
 	border-radius: 8px;
 }
 
+.cv-buttons{
+	display:flex;
+	gap:12px;
+	justify-content:center;
+	flex-wrap:wrap;
+}
+
 /* Basic */
 
 	@-ms-viewport {
