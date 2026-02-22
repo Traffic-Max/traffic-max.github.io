@@ -87,6 +87,8 @@ input:hover, select:hover, textarea:hover {
 	object-fit: cover;
 	border-radius: 8px; /* если хочешь закругление */
 	overflow: hidden; /* гарантирует, что слайды не вылезают */
+	display: flex;
+	align-items: stretch;
   }
   
   .glider-prev,
@@ -105,11 +107,77 @@ input:hover, select:hover, textarea:hover {
 	border-radius: 8px;
 }
 
+/* Ensure each slide occupies full viewport of the glider (one at a time) */
+.glider > .slide {
+	flex: 0 0 100%;
+	max-width: 100%;
+	box-sizing: border-box;
+}
+
+.glider-contain {
+	overflow: hidden;
+	width: 100%;
+}
+
 .cv-buttons{
-	display:flex;
-	gap:12px;
-	justify-content:center;
-	flex-wrap:wrap;
+	display: flex;
+	gap: 12px;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	margin-top: 0.75rem;
+	width: 100%;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cv-buttons .button{
+	flex: 1 1 0;
+	min-width: 140px;
+	box-sizing: border-box;
+	padding: 0 1rem;
+	text-align: center;
+}
+
+.lang-switch{
+	display: flex;
+	gap: 8px;
+	justify-content: center;
+	margin-top: 0.5rem;
+	width: 100%;
+	max-width: 420px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.lang-switch button{
+	background: transparent;
+	border: 1px solid rgba(56,189,248,0.95);
+	color: inherit;
+	padding: 0 0.6rem;
+	height: 2.2rem;
+	line-height: 2.2rem;
+	border-radius: 4px;
+	cursor: pointer;
+	letter-spacing: 0.12rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+@media screen and (max-width: 480px) {
+	.cv-buttons .button{
+		min-width: 120px;
+	}
+	.lang-switch button{
+		height: 2rem;
+		line-height: 2rem;
+		padding: 0 0.5rem;
+	}
+	.cv-buttons, .lang-switch {
+		max-width: 320px;
+		padding: 0 0.5rem;
+	}
 }
 
 /* Basic */
@@ -1339,10 +1407,10 @@ input:hover, select:hover, textarea:hover {
 	}
 
 		#header > * {
-			-moz-transition: opacity 0.325s ease-in-out;
-			-webkit-transition: opacity 0.325s ease-in-out;
-			-ms-transition: opacity 0.325s ease-in-out;
-			transition: opacity 0.325s ease-in-out;
+			-moz-transition: opacity 1.8s cubic-bezier(.22,.9,.27,.98) 0s;
+			-webkit-transition: opacity 1.8s cubic-bezier(.22,.9,.27,.98) 0s;
+			-ms-transition: opacity 1.8s cubic-bezier(.22,.9,.27,.98) 0s;
+			transition: opacity 1.8s cubic-bezier(.22,.9,.27,.98) 0s;
 			position: relative;
 			margin-top: 3.5rem;
 		}
@@ -1395,14 +1463,14 @@ input:hover, select:hover, textarea:hover {
 		}
 
 			#header .content .inner {
-				-moz-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-webkit-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-ms-transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				transition: max-height 0.75s ease, padding 0.75s ease, opacity 0.325s ease-in-out;
-				-moz-transition-delay: 0.25s;
-				-webkit-transition-delay: 0.25s;
-				-ms-transition-delay: 0.25s;
-				transition-delay: 0.25s;
+				-moz-transition: max-height 1.8s cubic-bezier(.22,.9,.27,.98), padding 1.8s cubic-bezier(.22,.9,.27,.98), opacity 1.8s cubic-bezier(.22,.9,.27,.98);
+				-webkit-transition: max-height 1.8s cubic-bezier(.22,.9,.27,.98), padding 1.8s cubic-bezier(.22,.9,.27,.98), opacity 1.8s cubic-bezier(.22,.9,.27,.98);
+				-ms-transition: max-height 1.8s cubic-bezier(.22,.9,.27,.98), padding 1.8s cubic-bezier(.22,.9,.27,.98), opacity 1.8s cubic-bezier(.22,.9,.27,.98);
+				transition: max-height 1.8s cubic-bezier(.22,.9,.27,.98), padding 1.8s cubic-bezier(.22,.9,.27,.98), opacity 1.8s cubic-bezier(.22,.9,.27,.98);
+				-moz-transition-delay: 0.5s;
+				-webkit-transition-delay: 0.5s;
+				-ms-transition-delay: 0.5s;
+				transition-delay: 0.5s;
 				padding: 3rem 2rem;
 				max-height: 40rem;
 				overflow: hidden;
@@ -1621,10 +1689,10 @@ input:hover, select:hover, textarea:hover {
 			-webkit-transform: translateY(0.25rem);
 			-ms-transform: translateY(0.25rem);
 			transform: translateY(0.25rem);
-			-moz-transition: opacity 0.325s ease-in-out, -moz-transform 0.325s ease-in-out;
-			-webkit-transition: opacity 0.325s ease-in-out, -webkit-transform 0.325s ease-in-out;
-			-ms-transition: opacity 0.325s ease-in-out, -ms-transform 0.325s ease-in-out;
-			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
+			-moz-transition: opacity 0.65s ease-in-out, -moz-transform 0.65s ease-in-out;
+			-webkit-transition: opacity 0.65s ease-in-out, -webkit-transform 0.65s ease-in-out;
+			-ms-transition: opacity 0.65s ease-in-out, -ms-transform 0.65s ease-in-out;
+			transition: opacity 0.65s ease-in-out, transform 0.65s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
 			width: 40rem;
@@ -1709,10 +1777,10 @@ input:hover, select:hover, textarea:hover {
 /* Footer */
 
 	#footer {
-		-moz-transition: -moz-transform 0.325s ease-in-out, -moz-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-		-webkit-transition: -webkit-transform 0.325s ease-in-out, -webkit-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-		-ms-transition: -ms-transform 0.325s ease-in-out, -ms-filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
-		transition: transform 0.325s ease-in-out, filter 0.325s ease-in-out, opacity 0.325s ease-in-out;
+		-moz-transition: -moz-transform 0.65s ease-in-out, -moz-filter 0.65s ease-in-out, opacity 0.65s ease-in-out;
+		-webkit-transition: -webkit-transform 0.65s ease-in-out, -webkit-filter 0.65s ease-in-out, opacity 0.65s ease-in-out;
+		-ms-transition: -ms-transform 0.65s ease-in-out, -ms-filter 0.65s ease-in-out, opacity 0.65s ease-in-out;
+		transition: transform 0.65s ease-in-out, filter 0.65s ease-in-out, opacity 0.65s ease-in-out;
 		width: 100%;
 		max-width: 100%;
 		margin-top: 2rem;

@@ -5,6 +5,7 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
 	<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 </head>
 
@@ -152,14 +153,33 @@
 <script src="assets/js/main.js"></script>
 
 <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css" />
 
 <script>
-const skillsSlider = new Glider(document.querySelector('#skills-slider'), {slidesToShow: 1});
-setInterval(()=>skillsSlider.scrollItem('next'),3000);
+window.addEventListener('load', function(){
+	// Skills slider
+	const skillsEl = document.querySelector('#skills-slider');
+	if(skillsEl && typeof Glider !== 'undefined'){
+		const skillsSlider = new Glider(skillsEl, {
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			draggable: true,
+			rewind: true
+		});
+		setInterval(()=>{ try{ skillsSlider.scrollItem('next'); }catch(e){} },3000);
+	}
 
-const expSlider = new Glider(document.querySelector('#exp-slider'), {slidesToShow: 1});
-setInterval(()=>expSlider.scrollItem('next'),4000);
+	// Experience slider
+	const expEl = document.querySelector('#exp-slider');
+	if(expEl && typeof Glider !== 'undefined'){
+		const expSlider = new Glider(expEl, {
+			slidesToShow: 1,
+			slidesToScroll: 1,
+			draggable: true,
+			rewind: true
+		});
+		setInterval(()=>{ try{ expSlider.scrollItem('next'); }catch(e){} },3000);
+	}
+});
 </script>
 
 <script>

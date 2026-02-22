@@ -26,9 +26,10 @@
 
 	// Play initial animations on page load.
 		$window.on('load', function() {
+			// Increase initial preload delay so the reveal animation is more noticeable
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
-			}, 100);
+			}, 1400);
 		});
 
 	// Fix: Flexbox min-height bug on IE.
